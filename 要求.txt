@@ -1,0 +1,30 @@
+服务器端开发和调试是用eclipse-jee-juno-SR2-win32.zip 手机端开发和调试是用adt-bundle-windows-x86-20130219.zip
+jdk是1.6或者1.7版本，如果用jdk1.8，服务器端需要改代码里的一些语法。
+这两个压缩包只要解压就可以不用安装
+服务器端是在eclipse-jee-juno里点菜单 file->import,选General的Existing Projects into Workspace
+手机端是在adt-bundle-windows-x86-20130219的eclipse里
+点菜单 file->import,选Android的Existing Android into Workspace
+
+1 安装并配置好MySQL数据库，root的密码为123456（因为程序里是这样）,实验室已安装了MYSQL5.6,直接使用就行，密码为root
+2 安装 MySQL数据库\navicat\下的安装包
+3 执行MySQL Command Line Client，登录密码为步骤1里的密码，然后执行 use test,再用记事本打开db2.sql文件，将文件内容粘贴到MySQL Command Line Client控制台并回车
+4 打开安装好的avicat for MySQL软件，注册之后建立数据库连接，密码是步骤1里的密码，打开连接后再打开数据库test，看是否有需要的table；
+5 安装Tomcat服务器，服务器端是用Eclipse IDE for Java EE Developers（ftp://huangjuncai@172.28.89.9/资源共享/Android上机环境/eclipse-jee-juno-SR2-win32.zip
+或者http://ftp.yzu.edu.tw/eclipse/technology/epp/downloads/release/kepler/SR2/eclipse-jee-juno-SR2-win32.zip）开发的（64位的系统就下载x64位的），下载解压
+之后将“com.sysdeo.eclipse.tomcat_3.2.1”整个文件夹复制到Eclipse企业版的plugins目录下；
+6 将mysql-connector-java-5.1.10-bin.jar复制到Tomcat安装目录的lib文件夹下；
+7 理解程序代码，并做修改，比如完成“找回密码”功能，就是输入已经注册好的手机号码，根据手机号码查找数据库里的user表，update密码；注册时判断手机号码是否已存在，
+存在则报错并提示“换一个号码注册”；
+8 修改程序，实现如下功能：新用户注册完成之后返回登录界面，自动用新注册的手机号码和密码填充相应输入框，方便登录；
+ 商品展示增加数量项目，即列表由ID、名称、金额增加为ID、名称、价格、数量。
+
+9 分别将“备份和恢复手机联系人”、“备份和恢复短信”（短信备份与恢复为选作）的功能加进去（通过服务器端将数据备份到MySQL数据库，恢复也是通过服务器端将数据从数据库写回手机端）。
+10 可以按照自己的想法添加其他功能，美化程序。
+
+
+报告文件名：
+学号姓名移动应用开发期末大作业报告.doc 如：201441302242古永浩移动应用开发期末大作业报告.doc
+代码文件名：
+学号姓名移动应用开发期末大作业代码.rar  或  学号姓名移动应用开发期末大作业代码.zip
+如：201441302242古永浩移动应用开发期末大作业代码.rar
+
